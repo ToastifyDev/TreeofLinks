@@ -234,7 +234,7 @@ export default function Settings() {
                 <label className="block">
                   <Link href="/account/socials">
                     <a>
-                      Socials <AiOutlineArrowRight className="inline mt-1" />
+                      Socials <AiOutlineArrowRight className="inline" />
                     </a>
                   </Link>
                 </label>
