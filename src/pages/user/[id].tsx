@@ -1,3 +1,4 @@
+import Document from "@/components/Document";
 import Loading from "@/components/Loading";
 import { trpc } from "@/utils/trpc";
 import moment from "moment";
@@ -9,7 +10,7 @@ import {
 } from "react-icons/bs";
 import { FaBirthdayCake, FaBriefcase } from "react-icons/fa";
 import { MdLocationOn } from "react-icons/md";
-import Nav from "../../components/Nav";
+import Nav from "@/components/Nav";
 
 export default function UserPage() {
   const router = useRouter();
@@ -25,6 +26,7 @@ export default function UserPage() {
 
   return (
     <>
+      <Document />
       <Nav />
       <div className="mt-3 ml-3">
         <div className="flex flex-row items-center">

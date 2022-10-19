@@ -7,6 +7,7 @@ import { AiOutlineArrowRight } from "react-icons/ai";
 import { useState } from "react";
 import debounce from "lodash/debounce";
 import Link from "next/link";
+import Document from "@/components/Document";
 
 export default function Settings() {
   const { data: session } = useSession();
@@ -130,6 +131,7 @@ export default function Settings() {
 
   return (
     <>
+      <Document />
       <Nav />
       {session ? (
         <>

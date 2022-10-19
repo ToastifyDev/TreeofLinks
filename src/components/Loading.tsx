@@ -1,9 +1,11 @@
 import useDarkMode from "@/utils/useDarkMode";
+import Document from "./Document";
 import Nav from "./Nav";
 
 export default function Loading() {
   return (
     <>
+      <Document />
       <Nav />
       <div className="flex flex-col items-center dark:text-white">
         <svg
