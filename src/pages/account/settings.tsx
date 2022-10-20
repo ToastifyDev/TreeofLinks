@@ -138,7 +138,7 @@ export default function Settings() {
           <div className="mt-8 flex flex-col items-center w-screen">
             <form onSubmit={onSubmit} className="w-80 md:w-[34rem]">
               <div className="grid grid-cols-1 gap-6 mb-1">
-                <label className="block">
+                <label className="hidden">
                   <div className="flex flex-col items-center">
                     {taken && (
                       <span className="font-medium mr-2 text-center text-red-500">
