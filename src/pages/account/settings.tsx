@@ -243,7 +243,7 @@ export default function Settings() {
               <button
                 type="submit"
                 className={components.button + ` mb-8`}
-                disabled={taken}
+                // disabled={taken}
               >
                 Save
               </button>
