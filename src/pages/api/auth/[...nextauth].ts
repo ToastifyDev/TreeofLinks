@@ -18,35 +18,28 @@ export const authOptions: NextAuthOptions = {
     logo: "/logo.png",
   },
   callbacks: {
-    async signIn({ profile }) {
-      const p = profile as DiscordProfile;
-
-      console.log(p);
-
-      const user = await prisma?.user.upsert({
-        where: {
-          id: p.id,
-        },
-        create: {
-          id: p.id,
-          name: p.username,
-          discriminator: p.discriminator,
-          image: p.image_url,
-        },
-        update: {
-          id: p.id,
-          name: p.username,
-          discriminator: p.discriminator,
-          image: p.image_url,
-        },
-      });
-
-      return true;
-    },
     async jwt({ token, account, user, profile }) {
       if (profile) {
         const p = profile as DiscordProfile;
         token.discriminator = p.discriminator;
+
+        await prisma?.user.upsert({
+          where: {
+            id: p.id,
+          },
+          create: {
+            id: p.id,
+            name: p.username,
+            discriminator: p.discriminator,
+            image: p.image_url,
+          },
+          update: {
+            id: p.id,
+            name: p.username,
+            discriminator: p.discriminator,
+            image: p.image_url,
+          },
+        });
       }
       return token;
     },
