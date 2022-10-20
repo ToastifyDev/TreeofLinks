@@ -11,6 +11,7 @@ import {
 import { FaBirthdayCake, FaBriefcase } from "react-icons/fa";
 import { MdLocationOn } from "react-icons/md";
 import Nav from "@/components/Nav";
+import NotFound from "../404";
 
 export default function UserPage() {
   const router = useRouter();
@@ -20,7 +21,7 @@ export default function UserPage() {
 
   if (isLoading) return <Loading />;
 
-  if (!data) return;
+  if (!data) return <NotFound />;
 
   const birthdate = new Date(data?.birthdate as string);
 
