@@ -82,7 +82,7 @@ export default function Nav() {
                   </span>
                 </div>
                 <div className="py-1" role="none">
-                  <Link href={`/user/${session.user.id}`}>
+                  <Link href="/user/me">
                     <a className="text-gray-700 dark:text-white block px-4 py-2">
                       View Profile
                     </a>
