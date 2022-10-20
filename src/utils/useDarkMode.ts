@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
 
 export default function useDarkMode() {
-  const [theme, setTheme] = useState(
-    typeof window !== "undefined" ? localStorage.theme : "dark"
+  const [theme, setTheme] = useState(() =>
+    typeof window !== "undefined"
+      ? window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : localStorage.theme
+      : "dark"
   );
   const colorTheme = theme === "dark" ? "light" : "dark";
 
